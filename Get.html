@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="Getstyle.css">
+
+    <title>MID-Exam</title>
+    <head>
+        <h1>Select Data</h1>
+    </head>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelector('#sel').onsubmit=function() {
+                var a = document.querySelector('#a').value;
+
+            if (a == 0) {
+                fetch('https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=flow-transducer')
+                .then(responce => responce.json())
+                .then(data => {
+
+                    const c = document.querySelector('#b').value;
+
+                    const dataname = data[c].name;
+                    const datatype = data[c].type;
+                    const datarange = data[c].range;
+                    const dataplant = data[c]["plant-site"];
+                    const dataunit = data[c].unit;
+                    const datavalue = data[c].value;
+
+                    document.querySelector('#name').innerHTML = `Name of sensor is ${dataname}.`;
+                    document.querySelector('#type').innerHTML = `Typs of sensor is ${datatype}.`;
+                    document.querySelector('#range').innerHTML = `Range of sensor is ${datarange}.`;
+                    document.querySelector('#plant').innerHTML = `Typs of sensor is ${dataplant}.`;
+                    document.querySelector('#unit').innerHTML = `Unit of sensor is ${dataunit}.`;
+                    document.querySelector('#value').innerHTML = `Value of sensor is ${datavalue}.`;
+                })
+            }
+            else if (a == 1){
+                fetch('https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=level-transducer')
+                .then(responce => responce.json())
+                .then(data => {
+
+                    const c = document.querySelector('#b').value;
+
+                    const dataname = data[c].name;
+                    const datatype = data[c].type;
+                    const datarange = data[c].range;
+                    const dataplant = data[c]["plant-site"];
+                    const dataunit = data[c].unit;
+                    const datavalue = data[c].value;
+
+                    document.querySelector('#name').innerHTML = `Name of sensor is ${dataname}.`;
+                    document.querySelector('#type').innerHTML = `Typs of sensor is ${datatype}.`;
+                    document.querySelector('#range').innerHTML = `Range of sensor is ${datarange}.`;
+                    document.querySelector('#plant').innerHTML = `Typs of sensor is ${dataplant}.`;
+                    document.querySelector('#unit').innerHTML = `Unit of sensor is ${dataunit}.`;
+                    document.querySelector('#value').innerHTML = `Value of sensor is ${datavalue}.`;
+                })
+            }
+            else if (a == 2){
+                fetch('https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=temperature-transducer')
+                .then(responce => responce.json())
+                .then(data => {
+
+                    const c = document.querySelector('#b').value;
+
+                    const dataname = data[c].name;
+                    const datatype = data[c].type;
+                    const datarange = data[c].range;
+                    const dataplant = data[c]["plant-site"];
+                    const dataunit = data[c].unit;
+                    const datavalue = data[c].value;
+
+                    document.querySelector('#name').innerHTML = `Name of sensor is ${dataname}.`;
+                    document.querySelector('#type').innerHTML = `Typs of sensor is ${datatype}.`;
+                    document.querySelector('#range').innerHTML = `Range of sensor is ${datarange}.`;
+                    document.querySelector('#plant').innerHTML = `Typs of sensor is ${dataplant}.`;
+                    document.querySelector('#unit').innerHTML = `Unit of sensor is ${dataunit}.`;
+                    document.querySelector('#value').innerHTML = `Value of sensor is ${datavalue}.`;
+                })
+            }
+            else if (a == 3){
+                fetch('https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=pressure-transducer')
+                .then(responce => responce.json())
+                .then(data => {
+
+                    const c = document.querySelector('#b').value;
+
+                    const dataname = data[c].name;
+                    const datatype = data[c].type;
+                    const datarange = data[c].range;
+                    const dataplant = data[c]["plant-site"];
+                    const dataunit = data[c].unit;
+                    const datavalue = data[c].value;
+
+                    document.querySelector('#name').innerHTML = `Name of sensor is ${dataname}.`;
+                    document.querySelector('#type').innerHTML = `Typs of sensor is ${datatype}.`;
+                    document.querySelector('#range').innerHTML = `Range of sensor is ${datarange}.`;
+                    document.querySelector('#plant').innerHTML = `Typs of sensor is ${dataplant}.`;
+                    document.querySelector('#unit').innerHTML = `Unit of sensor is ${dataunit}.`;
+                    document.querySelector('#value').innerHTML = `Value of sensor is ${datavalue}.`;
+                    
+                })
+            }
+            else if (a == 4){
+                document.querySelector('#name').innerHTML = `We have 4 type of sensor.`;
+                document.querySelector('#type').innerHTML = `1) Flow transduser.`;
+                document.querySelector('#range').innerHTML = `2) Level transduser.`;
+                document.querySelector('#plant').innerHTML = `3) Teamperature transduser.`;
+                document.querySelector('#unit').innerHTML = `4) Pressure transduser.`;
+                document.querySelector('#value').innerHTML = `------------------------`;
+            }
+            return false;
+        }
+        })
+    </script>
+    <body>
+        <form id="sel">
+            <select id="a">
+                <option value="---">---</option>
+                <option value="0">flow-transducer</option>
+                <option value="1">level-transducer</option>
+                <option value="2">temperature-transducer</option>
+                <option value="3">pressure-transducer</option>
+                <option value="4">sensor type</option>
+            </select>
+            <select id="b">
+                <option value="---">---</option>
+                <option value="0">Sensor ID.0</option>
+                <option value="1">Sensor ID.1</option>
+                <option value="2">Sensor ID.2</option>
+            </select>
+            <button type="submit">Find</button>
+        </form>
+            <div>
+                <li id="name"></li>
+                <li id="type"></li>
+                <li id="range"></li>
+                <li id="plant"></li>
+                <li id="unit"></li>
+                <li id="value"></li>
+            </div>
+    </body>
+    <a href="Post.html">Registor</a>
+    <a href="Homepage.html">Home Page</a>
+</html>

@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    background: url('sky.jpg');
+    background-size: cover;
+}
+form{
+    margin-top: 50px;
+    text-align: center;
+}
+input{
+    display: block;
+    width: 350px;
+    height: 40px;
+    margin: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+}
+button{
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    background-color: blue;
+    border: none;
+    color: white;
+    margin-top: 30px;
+}
+form h1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+}
+::placeholder{
+    color: white;
+}
+a:link, a:visited {
+    margin-top: 20px;
+    background-color: rgb(255, 173, 80);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+ }
+ a:hover, a:active {
+    background-color: rgba(255, 242, 0, 0.9);
+ }
